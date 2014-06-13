@@ -19,12 +19,13 @@ configure(allprojects) {
 }
 
 apply from: "gradle/publishing.gradle"
+apply plugin: 'coveralls'
 
 allprojects {
     apply plugin: "idea"
     apply plugin: "java"
     apply plugin: "groovy"
-    apply from: "$rootDir/gradle/code-coverage.gradle"
+    apply plugin: 'cobertura'
     apply from: "$rootDir/gradle/code-quality.gradle"
 
     ext.springSecurityVersion   = "3.2.4.RELEASE"
@@ -43,6 +44,13 @@ allprojects {
     }
 
 }
+
+def files = subprojects.collect { new File(it.projectDir, '/build/cobertura/cobertura.ser') }
+cobertura {
+    coverageFormats = [ 'xml', 'html' ]
+    coverageMergeDatafiles = files
+}
+test.dependsOn(subprojects.test)
 
 task sourceJar(type: Jar) {
     group 'Build'

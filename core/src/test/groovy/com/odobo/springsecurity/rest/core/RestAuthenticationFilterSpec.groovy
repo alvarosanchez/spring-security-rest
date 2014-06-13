@@ -24,7 +24,13 @@ import spock.lang.Specification
 class RestAuthenticationFilterSpec extends Specification {
 
     void "it works"(){
-        expect:
+        given:
+        RestAuthenticationFilter filter = new RestAuthenticationFilter()
+
+        when:
+        filter.doFilter(null, null, null)
+
+        then:
         true
     }
 
