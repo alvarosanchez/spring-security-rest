@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.6'
+    }
+}
+
+configure(allprojects) {
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-idea'
+}
+
+allprojects {
+    group = "com.odobo.springsecurity"
+
+    apply plugin: "idea"
+    apply plugin: "java"
+
+    ext.springSecurityVersion = "3.1.2.RELEASE"
+
+    repositories {
+        jcenter()
+        maven { url 'http://oss.jfrog.org/artifactory/repo' }
+    }
+
+}

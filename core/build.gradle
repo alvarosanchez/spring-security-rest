@@ -1,0 +1,6 @@
+description = "The core of Spring Security REST library"
+
+dependencies {
+	compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
+    provided "javax.servlet:javax.servlet-api:3.0.1"
+}
