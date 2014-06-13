@@ -53,6 +53,9 @@ def files = subprojects.collect { new File(it.projectDir, '/build/cobertura/cobe
 cobertura {
     coverageFormats = [ 'xml', 'html' ]
     coverageMergeDatafiles = files
+    rootProject.subprojects.each {
+        coverageDirs << file("${it.name}/build/classes/main")
+    }
 }
 test.dependsOn(subprojects.test)
 
