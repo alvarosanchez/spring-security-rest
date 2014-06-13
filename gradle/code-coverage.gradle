@@ -16,6 +16,8 @@
 
 apply plugin: 'cobertura'
 apply plugin: 'jacoco'
+apply plugin: 'coveralls'
+
 
 cobertura {
     coverageFormats = ['html', 'xml']
