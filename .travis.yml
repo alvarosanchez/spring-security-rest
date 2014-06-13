@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+- oraclejdk7
+
+env: TERM=dumb
+
+branches:
+  only:
+  - master
+  - develop
+  - /^release.*$/
+  - /^feature.*$/
+
+script: ./gradlew clean build cobertura
+
+after_success: ./gradlew coveralls
