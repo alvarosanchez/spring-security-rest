@@ -43,6 +43,10 @@ allprojects {
         }
     }
 
+    cobertura {
+        coverageFormats = [ 'xml', 'html' ]
+    }
+
 }
 
 def files = subprojects.collect { new File(it.projectDir, '/build/cobertura/cobertura.ser') }
