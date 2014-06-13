@@ -19,12 +19,21 @@ allprojects {
 
     apply plugin: "idea"
     apply plugin: "java"
+    apply plugin: "groovy"
 
-    ext.springSecurityVersion = "3.1.2.RELEASE"
+    ext.springSecurityVersion   = "3.2.4.RELEASE"
+    ext.groovyVersion           = "2.3.3"
 
     repositories {
         jcenter()
         maven { url 'http://oss.jfrog.org/artifactory/repo' }
+    }
+
+    dependencies {
+        testCompile "org.codehaus.groovy:groovy:${groovyVersion}"
+        testCompile 'org.spockframework:spock-core:0.7-groovy-2.0', {
+            exclude module: 'groovy-all'
+        }
     }
 
 }

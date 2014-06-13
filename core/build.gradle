@@ -1,6 +1,14 @@
 description = "The core of Spring Security REST library"
 
 dependencies {
-	compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
+	compile "org.springframework.security:spring-security-config:${springSecurityVersion}", {
+        exclude module:'spring-aop'
+    }
+	compile "org.springframework.security:spring-security-web:${springSecurityVersion}", {
+        exclude module:'spring-aop'
+        exclude module:'spring-asm'
+        exclude module:'spring-jdbc'
+        exclude module:'spring-tx'
+    }
     provided "javax.servlet:javax.servlet-api:3.0.1"
 }
