@@ -1,6 +1,7 @@
 Spring Security REST
 ====================
 [![Build Status](https://travis-ci.org/alvarosanchez/spring-security-rest.png?branch=master)](https://travis-ci.org/alvarosanchez/spring-security-rest)
+[![Coverage Status](https://img.shields.io/coveralls/alvarosanchez/spring-security-rest.svg)](https://coveralls.io/r/alvarosanchez/spring-security-rest)
 [![Latest Release](http://img.shields.io/github/release/alvarosanchez/spring-security-rest.svg)](https://github.com/alvarosanchez/spring-security-rest/releases)
 [![Gitter chat](https://badges.gitter.im/alvarosanchez/spring-security-rest.png)](https://gitter.im/alvarosanchez/spring-security-rest)
 
